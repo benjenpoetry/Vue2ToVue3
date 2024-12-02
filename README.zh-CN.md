@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Vue2 to Vue3 Converter</h1>
+  <h1>Vue2 to Vue3</h1>
   <span>中文 | <a href="./README.zh-CN.md">English</a></span>
 </div>
 
@@ -18,7 +18,7 @@
 
 你可以通过访问以下链接，实时体验 Vue2 到 Vue3 代码转换工具的效果：
 
-[在线演示](http://example.com)  *(请替换为实际的演示 URL)*
+[在线演示](https://benjenpoetry.github.io/)  *(请替换为实际的演示 URL)*
 
 ## 安装
 
@@ -26,8 +26,8 @@
 
 1. 克隆仓库：
     ```bash
-    git clone https://github.com/your-username/vue2-to-vue3-converter.git
-    cd vue2-to-vue3-converter
+    git clone https://github.com/benjenpoetry/Vue2ToVue3.git
+    cd Vue2ToVue3
     ```
 
 2. 安装所需依赖：
@@ -37,10 +37,10 @@
 
 3. 运行本地开发服务器：
     ```bash
-    npm run dev
+    npm run serve:app
     ```
 
-4. 打开浏览器，访问 `http://localhost:3000` 来访问转换器。
+4. 打开浏览器，访问 `http://localhost:5173` 来访问转换器。
 
 ## 使用方法
 
@@ -69,3 +69,10 @@
 
 - 感谢 Vue.js 社区持续开发 Vue 3。
 - 特别感谢为本工具做出贡献的开发者们。
+
+## 联系我们
+
+如果您有任何问题或建议，请通过以下方式联系我们：
+
+- **邮箱**: benjenemail@163.com
+- **QQ**: 315782792@qq.com

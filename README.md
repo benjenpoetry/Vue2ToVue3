@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Vue2 to Vue3 Converter</h1>
+  <h1>Vue2 to Vue3</h1>
   <span>English | <a href="./README.zh-CN.md">中文</a></span>
 </div>
 
@@ -18,7 +18,7 @@ A tool to automatically convert Vue 2.x code to Vue 3.x code. This project helps
 
 You can try out the Vue2 to Vue3 code conversion tool in action by visiting the following link:
 
-[Live Demo](http://example.com)  *(Replace with your actual demo URL)*
+[Live Demo](https://benjenpoetry.github.io/)  *(Replace with your actual demo URL)*
 
 ## Installation
 
@@ -26,8 +26,8 @@ To use the converter locally, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/vue2-to-vue3.git
-    cd vue2-to-vue3-converter
+    git clone https://github.com/benjenpoetry/Vue2ToVue3.git
+    cd Vue2ToVue3
     ```
 
 2. Install the required dependencies:
@@ -37,10 +37,10 @@ To use the converter locally, follow these steps:
 
 3. Run the local development server:
     ```bash
-    npm run dev
+    npm run serve:app
     ```
 
-4. Open your browser and visit `http://localhost:3000` to access the converter.
+4. Open your browser and visit `http://localhost:5173` to access the converter.
 
 ## Usage
 
@@ -69,3 +69,10 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 - Thanks to the Vue.js community for their continued development of Vue 3.
 - Special thanks to contributors who helped improve this tool.
+
+## Contact Us
+
+If you have any questions or suggestions, feel free to contact us via the following methods:
+
+- **Email**: benjenemail@163.com
+- **QQ**: 315782792@qq.com
