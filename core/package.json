@@ -1,0 +1,12 @@
+{
+    "name": "@vv/core",
+    "version": "1.0.0",
+    "description": "core",
+    "main": "./src/index.ts",
+    "scripts": {
+        "test:core": "vitest --config test.core.ts"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

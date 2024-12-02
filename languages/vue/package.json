@@ -1,0 +1,13 @@
+{
+    "name": "@vv/vue",
+    "packageManager": "yarn@3.6.1",
+    "type": "module",
+    "main": "index.ts",
+    "scripts": {
+        "test:vue": "vitest --config test.vue.ts",
+        "build": "lezer-generator parser/vue.grammar -o parser/parser && rollup -c rollup.config.js"
+    },
+    "dependencies": {
+        "@codemirror/buildhelper": "^1.0.2"
+    }
+}

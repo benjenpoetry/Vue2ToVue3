@@ -1,0 +1,9 @@
+{
+    "name": "@vv/javascript",
+    "packageManager": "yarn@3.6.1",
+    "main": "index.ts",
+    "scripts": {
+        "test:js-single-expression": "vitest --config test.single-expression.ts",
+        "test:script": "vitest --config test.script.ts"
+    }
+}

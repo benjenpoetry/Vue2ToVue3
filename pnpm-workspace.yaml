@@ -1,0 +1,7 @@
+packages:
+    - "lint/*"
+    - "languages/*"
+    - "application"
+    - "internal"
+    - "utils"
+    - "core"

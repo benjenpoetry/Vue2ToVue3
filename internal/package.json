@@ -1,0 +1,8 @@
+{
+    "name": "@vv/internal",
+    "packageManager": "yarn@3.6.1",
+    "scripts": {
+        "gen-vue-node": "tsx generate/gen-vue-node.ts",
+        "gen-js-node": "tsx generate/gen-js-node.ts"
+    }
+}

@@ -1,0 +1,16 @@
+# Dependencies
+node_modules
+
+# cache
+yarn.lock
+pnpm-lock.yaml
+
+es
+lib
+dist
+
+*.local
+.bin
+tmp
+
+scripts/.bin

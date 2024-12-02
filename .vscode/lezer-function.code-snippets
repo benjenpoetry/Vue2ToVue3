@@ -1,0 +1,19 @@
+{
+	"Print to console": {
+		"prefix": "lezer-function-value",
+		"body": [
+            "export function _L${1:child} ("
+            "    mapping: LNodeMapping,"
+            "    parentName: LAstTypeKey"
+            ") {"
+            "    const [child, index, children] = getContextWithLNodeMapping<L${1:child}Virtual>(mapping, '${1:child}');"
+            "    if (parentName === '${2:parent}') {"
+            "        const [_parent] = getContextWithLNodeMapping<L${2:parent}Virtual>(mapping, parentName);"
+            "        ${3|_parent.value = child;,_parent.value.push(child);|}"
+            "    }"
+            "    children.splice(index, 1);"
+            "}"
+		],
+		"description": "Log output to console"
+	}
+}

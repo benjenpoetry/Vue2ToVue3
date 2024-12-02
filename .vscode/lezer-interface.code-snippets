@@ -1,0 +1,15 @@
+{
+	"Print to console": {
+		"prefix": "lezer-interface",
+		"body": [
+            "export interface L${1:interface} {"
+            "    type: '${1:interface}';"
+            "}"
+            ""
+            "export interface L${1:interface}Virtual {"
+            "    type: '${1:interface}';"
+            "}"
+		],
+		"description": "Log output to console"
+	}
+}

@@ -1,0 +1,9 @@
+{
+    "name": "@vv/eslint-config",
+    "private": true,
+    "main": "index.js",
+    "description": "Eslint config",
+    "peerDependencies": {
+        "eslint": ">=8.0.0"
+    }
+}
