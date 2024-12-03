@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 import { genFileContents } from './utils';
 import { describe, expect, test } from 'vitest';
-import { genAst } from '..';
+import { genVueAst } from '..';
 const path = resolve(__dirname, 'vue.t');
 
 const [
@@ -10,7 +10,7 @@ const [
 
 describe('vue', () => {
     test('v1', () => {
-        const ast = genAst(v1);
+        const ast = genVueAst(v1);
         expect(ast.type).toBe('Document');
     });
 });
