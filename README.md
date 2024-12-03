@@ -76,3 +76,5 @@ If you have any questions or suggestions, feel free to contact us via the follow
 
 - **Email**: benjenemail@163.com
 - **QQ**: 315782792@qq.com
+
+<!-- git config --local http.proxy http://127.0.0.1:7897  -->
