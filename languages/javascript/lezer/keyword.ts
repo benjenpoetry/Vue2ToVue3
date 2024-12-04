@@ -10,6 +10,7 @@ import { JClassExpressionVirtual } from './class-expression';
 import { JFunctionExpressionVirtual } from './function-expression';
 import { JExportDeclarationVirtual } from './export-declaration';
 import { JReturnStatementVirtual } from './return-statement';
+import { JMemberExpression, JMemberExpressionVirtual } from './member-expression';
 /** $ _import $ **/
 
 export interface JKeyword {
@@ -69,6 +70,19 @@ export function _JKeyword (
     }
     if (parentName === 'SingleExpression' && value === 'null') {
         const [_parent] = getContextWithJNodeMapping<JSingleExpressionVirtual>(mapping, parentName);
+        _parent.value = child;
+    }
+
+    if (parentName === 'MemberExpression' && value === 'this') {
+        const [_parent] = getContextWithJNodeMapping<JMemberExpressionVirtual>(mapping, parentName);
+        _parent.value = child;
+    }
+    if (parentName === 'MemberExpression' && value === 'super') {
+        const [_parent] = getContextWithJNodeMapping<JMemberExpressionVirtual>(mapping, parentName);
+        _parent.value = child;
+    }
+    if (parentName === 'MemberExpression' && value === 'null') {
+        const [_parent] = getContextWithJNodeMapping<JMemberExpressionVirtual>(mapping, parentName);
         _parent.value = child;
     }
 

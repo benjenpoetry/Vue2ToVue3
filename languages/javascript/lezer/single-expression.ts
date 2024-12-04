@@ -16,11 +16,15 @@ import { JParenthesizedExpression, JParenthesizedExpressionVirtual } from './par
 import { JClassExpression, JClassExpressionVirtual } from './class-expression';
 import { JFunctionExpression, JFunctionExpressionVirtual } from './function-expression';
 import { JArrowFunction, JArrowFunctionVirtual } from './arrow-function';
+import { JMemberExpression, JMemberExpressionVirtual } from './member-expression';
+import { JBinaryExpression, JBinaryExpressionVirtual } from './binary-expression';
 /** $ _import $ **/
 
 export interface JSingleExpression {
     type: 'SingleExpression';
     value: JSingleExpressionValue;
+    memberExpression?: JMemberExpression;
+    binaryExpression?: JBinaryExpression;
     /** $ childType $ **/
 }
 
@@ -42,6 +46,8 @@ export type JSingleExpressionValue = JNumber
 | JClassExpression
 | JFunctionExpression
 | JArrowFunction
+| JMemberExpression
+| JBinaryExpression
 
 export type JSingleExpressionValueVirtual = JNumberVirtual
 | JStringVirtual
@@ -61,6 +67,8 @@ export type JSingleExpressionValueVirtual = JNumberVirtual
 | JClassExpressionVirtual
 | JFunctionExpressionVirtual
 | JArrowFunctionVirtual
+| JMemberExpressionVirtual
+| JBinaryExpressionVirtual
 
 export interface JSingleExpressionVirtual {
     type: 'SingleExpression';

@@ -10,6 +10,7 @@ import { JArgListVirtual } from './arg-list';
 import { JClassBodyVirtual } from './class-body';
 import { JReturnStatementVirtual } from './return-statement';
 import { JExportDeclarationVirtual } from './export-declaration';
+import { JMemberExpressionVirtual } from './member-expression';
 /** $ _import $ **/
 
 export interface JOperator {
@@ -146,6 +147,10 @@ export function _JOperator (
         if (_parent.value?.type === 'ExportDefault') {
             _parent.value.semi = child;
         }
+    }
+    if (parentName === 'MemberExpression' && value === '.') {
+        const [_parent] = getContextWithJNodeMapping<JMemberExpressionVirtual>(mapping, parentName);
+        _parent.chain = child;
     }
     /** $ kFun $ **/
 

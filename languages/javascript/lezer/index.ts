@@ -30,6 +30,9 @@ export * from './arrow-function';
 export * from './arrow';
 export * from './export-declaration';
 export * from './return-statement';
+export * from './member-expression';
+export * from './binary-expression';
+export * from './arith-op';
 /** $ _export $ **/
 export * from './utils';
 export * from './ast-type';

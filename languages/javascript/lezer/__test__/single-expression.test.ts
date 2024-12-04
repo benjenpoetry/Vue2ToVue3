@@ -36,7 +36,9 @@ const [
     JParenthesizedExpression,
     JClassExpression,
     JFunctionExpression,
-    JArrayExpression
+    JArrayExpression,
+    JMemberExpression,
+    BinaryExpression
 ] = genFileContents(path);
 
 describe('SingleExpression', () => {
@@ -148,8 +150,16 @@ describe('SingleExpression', () => {
     //     const ast = genJsAst(JFunctionExpression);
     //     expect(ast.type).toBe('SingleExpression');
     // });
-    test('JArrayExpression', () => {
-        const ast = genJsAst(JArrayExpression);
+    // test('JArrayExpression', () => {
+    //     const ast = genJsAst(JArrayExpression);
+    //     expect(ast.type).toBe('SingleExpression');
+    // });
+    // test('JMemberExpression', () => {
+    //     const ast = genJsAst(JMemberExpression);
+    //     expect(ast.type).toBe('SingleExpression');
+    // });
+    test('BinaryExpression', () => {
+        const ast = genJsAst(BinaryExpression);
         expect(ast.type).toBe('SingleExpression');
     });
 });

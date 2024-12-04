@@ -32,6 +32,11 @@ export function _JPropertyName (
         _parent.propertyName = child;
     }
 
+    if (parentName === 'MemberExpression') {
+        const [_parent] = getContextWithJNodeMapping<JNewTargetVirtual>(mapping, parentName);
+        _parent.propertyName = child;
+    }
+
     callback();
     children.splice(index, 1);
 }

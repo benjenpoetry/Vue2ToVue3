@@ -33,6 +33,9 @@ import { JArrowFunction } from './arrow-function';
 import { JArrow } from './arrow';
 import { JExportDeclaration } from './export-declaration';
 import { JReturnStatement } from './return-statement';
+import { JMemberExpression } from './member-expression';
+import { JBinaryExpression } from './binary-expression';
+import { JArithOp } from './arith-op';
 /** $ _import $ **/
 
 export type JAstType = JSingleExpression
@@ -68,6 +71,9 @@ export type JAstType = JSingleExpression
 | JArrow
 | JExportDeclaration
 | JReturnStatement
+| JMemberExpression
+| JBinaryExpression
+| JArithOp
 /** $ type $ **/
 | JKeyword
 | JOperator

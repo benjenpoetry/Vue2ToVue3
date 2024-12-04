@@ -44,6 +44,9 @@ import { _JArrowFunction } from './arrow-function';
 import { _JArrow } from './arrow';
 import { _JExportDeclaration } from './export-declaration';
 import { _JReturnStatement } from './return-statement';
+import { _JMemberExpression } from './member-expression';
+import { _JBinaryExpression } from './binary-expression';
+import { _JArithOp } from './arith-op';
 /** $ _import $ **/
 
 export type JNodeMapping = Map<JAstTypeKey, JAstVirtualType[]>;
@@ -140,6 +143,12 @@ export function genJsVirtualNode (type: JAstTypeKey): JAstVirtualType {
         return { type: 'ExportDeclaration' };
     case 'ReturnStatement':
         return { type: 'ReturnStatement' };
+    case 'MemberExpression':
+        return { type: 'MemberExpression' };
+    case 'BinaryExpression':
+        return { type: 'BinaryExpression' };
+    case 'ArithOp':
+        return { type: 'ArithOp' };
     /** $ genVirtualNode $ **/
     }
 }
@@ -366,7 +375,7 @@ export function genJsNode (
 
     switch (childName) {
     case 'Number':
-        return _JNumber(mapping, parentName, value, callback);
+        return _JNumber(mapping, parentName, value, range, callback);
     case 'String':
         return _JString(mapping, parentName, value, callback);
     case 'VariableName':
@@ -431,7 +440,13 @@ export function genJsNode (
         return _JExportDeclaration(mapping, parentName);
     case 'ReturnStatement':
         return _JReturnStatement(mapping, parentName);
-        /** $ genAst $ **/
+    case 'MemberExpression':
+        return _JMemberExpression(mapping, parentName);
+    case 'BinaryExpression':
+        return _JBinaryExpression(mapping, parentName);
+    case 'ArithOp':
+        return _JArithOp(mapping, parentName, value, callback);
+    /** $ genAst $ **/
     }
     function callback () {
         _callback(value, to);

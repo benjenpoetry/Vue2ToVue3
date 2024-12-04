@@ -33,6 +33,9 @@ import { JArrowFunctionVirtual } from './arrow-function';
 import { JArrowVirtual } from './arrow';
 import { JExportDeclarationVirtual } from './export-declaration';
 import { JReturnStatementVirtual } from './return-statement';
+import { JMemberExpressionVirtual } from './member-expression';
+import { JBinaryExpressionVirtual } from './binary-expression';
+import { JArithOpVirtual } from './arith-op';
 /** $ _import $ **/
 
 export type JAstVirtualType = JSingleExpressionVirtual
@@ -68,6 +71,9 @@ export type JAstVirtualType = JSingleExpressionVirtual
 | JArrowVirtual
 | JExportDeclarationVirtual
 | JReturnStatementVirtual
+| JMemberExpressionVirtual
+| JBinaryExpressionVirtual
+| JArithOpVirtual
 /** $ type $ **/
 | JKeywordVirtual
 | JOperatorVirtual
