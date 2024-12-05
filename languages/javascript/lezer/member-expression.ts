@@ -1,3 +1,4 @@
+import { JAssignmentExpressionVirtual } from './assignment-expression';
 import { JOperator, JOperatorVirtual } from './operator';
 import { JPropertyName, JPropertyNameVirtual } from './property-name';
 import { JSingleExpressionValue, JSingleExpressionValueVirtual, JSingleExpressionVirtual } from './single-expression';
@@ -32,6 +33,10 @@ export function _JMemberExpression (
     if (parentName === 'SingleExpression') {
         const [_parent] = getContextWithJNodeMapping<JSingleExpressionVirtual>(mapping, parentName);
         _parent.value = child;
+    }
+    if (parentName === 'AssignmentExpression') {
+        const [_parent] = getContextWithJNodeMapping<JAssignmentExpressionVirtual>(mapping, parentName);
+        _parent.left = child;
     }
     children.splice(index, 1);
 }

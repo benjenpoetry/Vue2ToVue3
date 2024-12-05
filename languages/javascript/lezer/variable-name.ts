@@ -1,5 +1,6 @@
 import { JArrayExpressionVirtual } from './array-expression';
 import { JArrowFunctionVirtual } from './arrow-function';
+import { JAssignmentExpressionVirtual } from './assignment-expression';
 import { JAwaitExpressionVirtual } from './await-expression';
 import { JBinaryExpressionVirtual } from './binary-expression';
 import { JClassExpressionVirtual } from './class-expression';
@@ -87,6 +88,14 @@ export function _JVariableName (
     }
     if (parentName === 'ConditionalExpression') {
         const [_parent] = getContextWithJNodeMapping<JConditionalExpressionVirtual>(mapping, parentName);
+        if (_parent.left) {
+            _parent.right = child;
+        } else {
+            _parent.left = child;
+        }
+    }
+    if (parentName === 'AssignmentExpression') {
+        const [_parent] = getContextWithJNodeMapping<JAssignmentExpressionVirtual>(mapping, parentName);
         if (_parent.left) {
             _parent.right = child;
         } else {

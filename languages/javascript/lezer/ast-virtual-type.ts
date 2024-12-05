@@ -37,6 +37,9 @@ import { JMemberExpressionVirtual } from './member-expression';
 import { JBinaryExpressionVirtual } from './binary-expression';
 import { JArithOpVirtual } from './arith-op';
 import { JConditionalExpressionVirtual } from './conditional-expression';
+import { JAssignmentExpressionVirtual } from './assignment-expression';
+import { JUpdateOpVirtual } from './update-op';
+import { JEqualsVirtual } from './equals';
 /** $ _import $ **/
 
 export type JAstVirtualType = JSingleExpressionVirtual
@@ -76,6 +79,9 @@ export type JAstVirtualType = JSingleExpressionVirtual
 | JBinaryExpressionVirtual
 | JArithOpVirtual
 | JConditionalExpressionVirtual
+| JAssignmentExpressionVirtual
+| JUpdateOpVirtual
+| JEqualsVirtual
 /** $ type $ **/
 | JKeywordVirtual
 | JOperatorVirtual

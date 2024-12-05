@@ -34,6 +34,9 @@ export * from './member-expression';
 export * from './binary-expression';
 export * from './arith-op';
 export * from './conditional-expression';
+export * from './assignment-expression';
+export * from './update-op';
+export * from './equals';
 /** $ _export $ **/
 export * from './utils';
 export * from './ast-type';

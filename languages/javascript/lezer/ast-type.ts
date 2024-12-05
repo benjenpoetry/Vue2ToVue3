@@ -37,6 +37,9 @@ import { JMemberExpression } from './member-expression';
 import { JBinaryExpression } from './binary-expression';
 import { JArithOp } from './arith-op';
 import { JConditionalExpression } from './conditional-expression';
+import { JAssignmentExpression } from './assignment-expression';
+import { JUpdateOp } from './update-op';
+import { JEquals } from './equals';
 /** $ _import $ **/
 
 export type JAstType = JSingleExpression
@@ -76,6 +79,9 @@ export type JAstType = JSingleExpression
 | JBinaryExpression
 | JArithOp
 | JConditionalExpression
+| JAssignmentExpression
+| JUpdateOp
+| JEquals
 /** $ type $ **/
 | JKeyword
 | JOperator

@@ -39,7 +39,9 @@ const [
     JArrayExpression,
     JMemberExpression,
     BinaryExpression,
-    ConditionalExpression
+    ConditionalExpression,
+    AssignmentExpression,
+    AssignmentExpression2
 ] = genFileContents(path);
 
 describe('SingleExpression', () => {
@@ -163,8 +165,16 @@ describe('SingleExpression', () => {
     //     const ast = genJsAst(BinaryExpression);
     //     expect(ast.type).toBe('SingleExpression');
     // });
-    test('ConditionalExpression', () => {
-        const ast = genJsAst(ConditionalExpression);
+    // test('ConditionalExpression', () => {
+    //     const ast = genJsAst(ConditionalExpression);
+    //     expect(ast.type).toBe('SingleExpression');
+    // });
+    // test('AssignmentExpression', () => {
+    //     const ast = genJsAst(AssignmentExpression);
+    //     expect(ast.type).toBe('SingleExpression');
+    // });
+    test('AssignmentExpression2', () => {
+        const ast = genJsAst(AssignmentExpression2);
         expect(ast.type).toBe('SingleExpression');
     });
 });

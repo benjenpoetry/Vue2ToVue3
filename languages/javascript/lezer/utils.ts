@@ -48,6 +48,9 @@ import { _JMemberExpression } from './member-expression';
 import { _JBinaryExpression } from './binary-expression';
 import { _JArithOp } from './arith-op';
 import { _JConditionalExpression } from './conditional-expression';
+import { _JAssignmentExpression } from './assignment-expression';
+import { _JUpdateOp } from './update-op';
+import { _JEquals } from './equals';
 /** $ _import $ **/
 
 export type JNodeMapping = Map<JAstTypeKey, JAstVirtualType[]>;
@@ -152,6 +155,12 @@ export function genJsVirtualNode (type: JAstTypeKey): JAstVirtualType {
         return { type: 'ArithOp' };
     case 'ConditionalExpression':
         return { type: 'ConditionalExpression' };
+    case 'AssignmentExpression':
+        return { type: 'AssignmentExpression' };
+    case 'UpdateOp':
+        return { type: 'UpdateOp' };
+    case 'Equals':
+        return { type: 'Equals' };
     /** $ genVirtualNode $ **/
     }
 }
@@ -451,6 +460,12 @@ export function genJsNode (
         return _JArithOp(mapping, parentName, value, callback);
     case 'ConditionalExpression':
         return _JConditionalExpression(mapping, parentName);
+    case 'AssignmentExpression':
+        return _JAssignmentExpression(mapping, parentName);
+    case 'UpdateOp':
+        return _JUpdateOp(mapping, parentName, value, callback);
+    case 'Equals':
+        return _JEquals(mapping, parentName, value, callback);
     /** $ genAst $ **/
     }
     function callback () {
