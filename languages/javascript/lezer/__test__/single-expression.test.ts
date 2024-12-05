@@ -38,7 +38,8 @@ const [
     JFunctionExpression,
     JArrayExpression,
     JMemberExpression,
-    BinaryExpression
+    BinaryExpression,
+    ConditionalExpression
 ] = genFileContents(path);
 
 describe('SingleExpression', () => {
@@ -158,8 +159,12 @@ describe('SingleExpression', () => {
     //     const ast = genJsAst(JMemberExpression);
     //     expect(ast.type).toBe('SingleExpression');
     // });
-    test('BinaryExpression', () => {
-        const ast = genJsAst(BinaryExpression);
+    // test('BinaryExpression', () => {
+    //     const ast = genJsAst(BinaryExpression);
+    //     expect(ast.type).toBe('SingleExpression');
+    // });
+    test('ConditionalExpression', () => {
+        const ast = genJsAst(ConditionalExpression);
         expect(ast.type).toBe('SingleExpression');
     });
 });

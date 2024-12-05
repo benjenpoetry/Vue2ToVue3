@@ -33,6 +33,7 @@ export * from './return-statement';
 export * from './member-expression';
 export * from './binary-expression';
 export * from './arith-op';
+export * from './conditional-expression';
 /** $ _export $ **/
 export * from './utils';
 export * from './ast-type';

@@ -10,7 +10,7 @@ import { JClassExpressionVirtual } from './class-expression';
 import { JFunctionExpressionVirtual } from './function-expression';
 import { JExportDeclarationVirtual } from './export-declaration';
 import { JReturnStatementVirtual } from './return-statement';
-import { JMemberExpression, JMemberExpressionVirtual } from './member-expression';
+import { JMemberExpressionVirtual } from './member-expression';
 /** $ _import $ **/
 
 export interface JKeyword {

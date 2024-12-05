@@ -18,6 +18,7 @@ import { JFunctionExpression, JFunctionExpressionVirtual } from './function-expr
 import { JArrowFunction, JArrowFunctionVirtual } from './arrow-function';
 import { JMemberExpression, JMemberExpressionVirtual } from './member-expression';
 import { JBinaryExpression, JBinaryExpressionVirtual } from './binary-expression';
+import { JConditionalExpression, JConditionalExpressionVirtual } from './conditional-expression';
 /** $ _import $ **/
 
 export interface JSingleExpression {
@@ -25,6 +26,7 @@ export interface JSingleExpression {
     value: JSingleExpressionValue;
     memberExpression?: JMemberExpression;
     binaryExpression?: JBinaryExpression;
+    conditionalExpression?: JConditionalExpression;
     /** $ childType $ **/
 }
 
@@ -48,6 +50,7 @@ export type JSingleExpressionValue = JNumber
 | JArrowFunction
 | JMemberExpression
 | JBinaryExpression
+| JConditionalExpression
 
 export type JSingleExpressionValueVirtual = JNumberVirtual
 | JStringVirtual
@@ -69,6 +72,7 @@ export type JSingleExpressionValueVirtual = JNumberVirtual
 | JArrowFunctionVirtual
 | JMemberExpressionVirtual
 | JBinaryExpressionVirtual
+| JConditionalExpressionVirtual
 
 export interface JSingleExpressionVirtual {
     type: 'SingleExpression';

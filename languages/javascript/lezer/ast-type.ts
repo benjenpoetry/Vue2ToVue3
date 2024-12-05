@@ -36,6 +36,7 @@ import { JReturnStatement } from './return-statement';
 import { JMemberExpression } from './member-expression';
 import { JBinaryExpression } from './binary-expression';
 import { JArithOp } from './arith-op';
+import { JConditionalExpression } from './conditional-expression';
 /** $ _import $ **/
 
 export type JAstType = JSingleExpression
@@ -74,6 +75,7 @@ export type JAstType = JSingleExpression
 | JMemberExpression
 | JBinaryExpression
 | JArithOp
+| JConditionalExpression
 /** $ type $ **/
 | JKeyword
 | JOperator

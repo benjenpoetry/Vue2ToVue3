@@ -1,7 +1,9 @@
 import { JArrayExpressionVirtual } from './array-expression';
 import { JArrowFunctionVirtual } from './arrow-function';
 import { JAwaitExpressionVirtual } from './await-expression';
+import { JBinaryExpressionVirtual } from './binary-expression';
 import { JClassExpressionVirtual } from './class-expression';
+import { JConditionalExpressionVirtual } from './conditional-expression';
 import { JNewExpressionVirtual } from './new-expression';
 import { JParenthesizedExpressionVirtual } from './parenthesized-expression';
 import { JPropertyVirtual } from './property';
@@ -74,6 +76,22 @@ export function _JVariableName (
     if (parentName === 'ArrowFunction') {
         const [_parent] = getContextWithJNodeMapping<JArrowFunctionVirtual>(mapping, parentName);
         _parent.value = child;
+    }
+    if (parentName === 'BinaryExpression') {
+        const [_parent] = getContextWithJNodeMapping<JBinaryExpressionVirtual>(mapping, parentName);
+        if (_parent.left) {
+            _parent.right = child;
+        } else {
+            _parent.left = child;
+        }
+    }
+    if (parentName === 'ConditionalExpression') {
+        const [_parent] = getContextWithJNodeMapping<JConditionalExpressionVirtual>(mapping, parentName);
+        if (_parent.left) {
+            _parent.right = child;
+        } else {
+            _parent.left = child;
+        }
     }
     children.splice(index, 1);
     callback();
