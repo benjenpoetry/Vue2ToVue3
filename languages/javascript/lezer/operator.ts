@@ -11,6 +11,8 @@ import { JClassBodyVirtual } from './class-body';
 import { JReturnStatementVirtual } from './return-statement';
 import { JExportDeclarationVirtual } from './export-declaration';
 import { JMemberExpressionVirtual } from './member-expression';
+import { JClassExpressionVirtual } from './class-expression';
+import { JCallExpressionVirtual } from './call-expression';
 /** $ _import $ **/
 
 export interface JOperator {
@@ -37,6 +39,7 @@ export const JOperators = [
     '!',
     '~',
     ';',
+    '?.',
     /** $ kVar $ **/
     '['
 ];
@@ -151,6 +154,10 @@ export function _JOperator (
     if (parentName === 'MemberExpression' && value === '.') {
         const [_parent] = getContextWithJNodeMapping<JMemberExpressionVirtual>(mapping, parentName);
         _parent.chain = child;
+    }
+    if (parentName === 'CallExpression' && value === '?.') {
+        const [_parent] = getContextWithJNodeMapping<JCallExpressionVirtual>(mapping, parentName);
+        _parent.questionDot = child;
     }
     /** $ kFun $ **/
 

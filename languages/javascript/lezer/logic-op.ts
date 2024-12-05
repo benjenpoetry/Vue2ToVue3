@@ -6,6 +6,7 @@ import {
     JAstTypeKey,
     JNodeMapping
 } from './utils';
+import { JPostfixExpressionVirtual } from './postfix-expression';
 /** $ _import $ **/
 
 export interface JLogicOp {
@@ -32,6 +33,7 @@ export function _JLogicOp (
     const [child, index, children] = getContextWithJNodeMapping<JLogicOpVirtual>(mapping, 'LogicOp');
     child.value = value;
     child.range = range;
+    children.splice(index, 1);
 
     if (parentName === 'UnaryExpression') {
         const [_parent] = getContextWithJNodeMapping<JUnaryExpressionVirtual>(mapping, parentName);
@@ -48,6 +50,10 @@ export function _JLogicOp (
         _parent.colon = child;
     }
 
+    if (parentName === 'PostfixExpression') {
+        const [_parent] = getContextWithJNodeMapping<JPostfixExpressionVirtual>(mapping, parentName);
+        _parent.logicOp = child;
+    }
+
     callback();
-    children.splice(index, 1);
 }

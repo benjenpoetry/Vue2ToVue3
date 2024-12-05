@@ -20,15 +20,13 @@ import { JMemberExpression, JMemberExpressionVirtual } from './member-expression
 import { JBinaryExpression, JBinaryExpressionVirtual } from './binary-expression';
 import { JConditionalExpression, JConditionalExpressionVirtual } from './conditional-expression';
 import { JAssignmentExpression, JAssignmentExpressionVirtual } from './assignment-expression';
+import { JPostfixExpression, JPostfixExpressionVirtual } from './postfix-expression';
+import { JCallExpression, JCallExpressionVirtual } from './call-expression';
 /** $ _import $ **/
 
 export interface JSingleExpression {
     type: 'SingleExpression';
     value: JSingleExpressionValue;
-    memberExpression?: JMemberExpression;
-    binaryExpression?: JBinaryExpression;
-    conditionalExpression?: JConditionalExpression;
-    assignmentExpression?: JAssignmentExpression;
     /** $ childType $ **/
 }
 
@@ -54,6 +52,8 @@ export type JSingleExpressionValue = JNumber
 | JBinaryExpression
 | JConditionalExpression
 | JAssignmentExpression
+| JPostfixExpression
+| JCallExpression
 
 export type JSingleExpressionValueVirtual = JNumberVirtual
 | JStringVirtual
@@ -77,6 +77,8 @@ export type JSingleExpressionValueVirtual = JNumberVirtual
 | JBinaryExpressionVirtual
 | JConditionalExpressionVirtual
 | JAssignmentExpressionVirtual
+| JPostfixExpressionVirtual
+| JCallExpressionVirtual
 
 export interface JSingleExpressionVirtual {
     type: 'SingleExpression';

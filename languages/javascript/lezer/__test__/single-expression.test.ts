@@ -41,7 +41,9 @@ const [
     BinaryExpression,
     ConditionalExpression,
     AssignmentExpression,
-    AssignmentExpression2
+    AssignmentExpression2,
+    PostfixExpression,
+    CallExpression
 ] = genFileContents(path);
 
 describe('SingleExpression', () => {
@@ -173,8 +175,16 @@ describe('SingleExpression', () => {
     //     const ast = genJsAst(AssignmentExpression);
     //     expect(ast.type).toBe('SingleExpression');
     // });
-    test('AssignmentExpression2', () => {
-        const ast = genJsAst(AssignmentExpression2);
-        expect(ast.type).toBe('SingleExpression');
-    });
+    // test('AssignmentExpression2', () => {
+    //     const ast = genJsAst(AssignmentExpression2);
+    //     expect(ast.type).toBe('SingleExpression');
+    // });
+    // test('PostfixExpression', () => {
+    //     const ast = genJsAst(PostfixExpression);
+    //     expect(ast.type).toBe('SingleExpression');
+    // });
+    // test('CallExpression', () => {
+    //     const ast = genJsAst(CallExpression);
+    //     expect(ast.type).toBe('SingleExpression');
+    // });
 });

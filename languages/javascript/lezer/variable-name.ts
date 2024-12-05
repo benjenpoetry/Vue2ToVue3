@@ -1,3 +1,4 @@
+import { Range } from 'vscode-languageserver-protocol';
 import { JArrayExpressionVirtual } from './array-expression';
 import { JArrowFunctionVirtual } from './arrow-function';
 import { JAssignmentExpressionVirtual } from './assignment-expression';
@@ -7,6 +8,7 @@ import { JClassExpressionVirtual } from './class-expression';
 import { JConditionalExpressionVirtual } from './conditional-expression';
 import { JNewExpressionVirtual } from './new-expression';
 import { JParenthesizedExpressionVirtual } from './parenthesized-expression';
+import { JPostfixExpressionVirtual } from './postfix-expression';
 import { JPropertyVirtual } from './property';
 import { JSingleExpressionVirtual } from './single-expression';
 import { JUnaryExpressionVirtual } from './unary-expression';
@@ -16,17 +18,20 @@ import {
     JNodeMapping
 } from './utils';
 import { JYieldExpressionVirtual } from './yield-expression';
+import { JArgListVirtual } from './arg-list';
 /** $ _import $ **/
 
 export interface JVariableName {
     type: 'VariableName';
-    value: string
+    value: string;
+    range: Range
     /** $ childType $ **/
 }
 
 export interface JVariableNameVirtual {
     type: 'VariableName';
-    value?: string
+    value?: string;
+    range?: Range
     /** $ childVirtualType $ **/
 }
 
@@ -34,10 +39,18 @@ export function _JVariableName (
     mapping: JNodeMapping,
     parentName: JAstTypeKey,
     value: string,
+    range: Range,
     callback: () => void
 ) {
     const [child, index, children] = getContextWithJNodeMapping<JVariableNameVirtual>(mapping, 'VariableName');
     child.value = value;
+    child.range = range;
+    children.splice(index, 1);
+
+    if (parentName === 'ArgList') {
+        const [_parent] = getContextWithJNodeMapping<JArgListVirtual>(mapping, parentName);
+        _parent.values.push(child);
+    }
     if (parentName === 'SingleExpression') {
         const [_parent] = getContextWithJNodeMapping<JSingleExpressionVirtual>(mapping, parentName);
         _parent.value = child;
@@ -102,6 +115,9 @@ export function _JVariableName (
             _parent.left = child;
         }
     }
-    children.splice(index, 1);
+    if (parentName === 'PostfixExpression') {
+        const [_parent] = getContextWithJNodeMapping<JPostfixExpressionVirtual>(mapping, parentName);
+        _parent.value = child;
+    }
     callback();
 }

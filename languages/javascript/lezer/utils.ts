@@ -51,6 +51,8 @@ import { _JConditionalExpression } from './conditional-expression';
 import { _JAssignmentExpression } from './assignment-expression';
 import { _JUpdateOp } from './update-op';
 import { _JEquals } from './equals';
+import { _JPostfixExpression } from './postfix-expression';
+import { _JCallExpression } from './call-expression';
 /** $ _import $ **/
 
 export type JNodeMapping = Map<JAstTypeKey, JAstVirtualType[]>;
@@ -118,7 +120,7 @@ export function genJsVirtualNode (type: JAstTypeKey): JAstVirtualType {
     case 'NewExpression':
         return { type: 'NewExpression' };
     case 'ArgList':
-        return { type: 'ArgList' };
+        return { type: 'ArgList', values: [] };
     case 'UnaryExpression':
         return { type: 'UnaryExpression' };
     case 'LogicOp':
@@ -161,6 +163,14 @@ export function genJsVirtualNode (type: JAstTypeKey): JAstVirtualType {
         return { type: 'UpdateOp' };
     case 'Equals':
         return { type: 'Equals' };
+    case 'PostfixExpression':
+        return { type: 'PostfixExpression' };
+    case 'CallExpression':
+        return { type: 'CallExpression' };
+    case 'InstantiationExpression':
+        return { type: 'InstantiationExpression' };
+    case 'TypeArgList':
+        return { type: 'TypeArgList' };
     /** $ genVirtualNode $ **/
     }
 }
@@ -391,7 +401,7 @@ export function genJsNode (
     case 'String':
         return _JString(mapping, parentName, value, callback);
     case 'VariableName':
-        return _JVariableName(mapping, parentName, value, callback);
+        return _JVariableName(mapping, parentName, value, range, callback);
     case 'TemplateString':
         return _JTemplateString(mapping, parentName);
     case 'Script':
@@ -466,6 +476,10 @@ export function genJsNode (
         return _JUpdateOp(mapping, parentName, value, callback);
     case 'Equals':
         return _JEquals(mapping, parentName, value, callback);
+    case 'PostfixExpression':
+        return _JPostfixExpression(mapping, parentName);
+    case 'CallExpression':
+        return _JCallExpression(mapping, parentName);
     /** $ genAst $ **/
     }
     function callback () {

@@ -37,6 +37,10 @@ export * from './conditional-expression';
 export * from './assignment-expression';
 export * from './update-op';
 export * from './equals';
+export * from './postfix-expression';
+export * from './call-expression';
+export * from './instantiation-expression';
+export * from './type-arg-list';
 /** $ _export $ **/
 export * from './utils';
 export * from './ast-type';

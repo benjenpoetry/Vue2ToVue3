@@ -40,6 +40,10 @@ import { JConditionalExpression } from './conditional-expression';
 import { JAssignmentExpression } from './assignment-expression';
 import { JUpdateOp } from './update-op';
 import { JEquals } from './equals';
+import { JPostfixExpression } from './postfix-expression';
+import { JCallExpression } from './call-expression';
+import { JInstantiationExpression } from './instantiation-expression';
+import { JTypeArgList } from './type-arg-list';
 /** $ _import $ **/
 
 export type JAstType = JSingleExpression
@@ -82,6 +86,10 @@ export type JAstType = JSingleExpression
 | JAssignmentExpression
 | JUpdateOp
 | JEquals
+| JPostfixExpression
+| JCallExpression
+| JInstantiationExpression
+| JTypeArgList
 /** $ type $ **/
 | JKeyword
 | JOperator

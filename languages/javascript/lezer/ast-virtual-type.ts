@@ -40,6 +40,10 @@ import { JConditionalExpressionVirtual } from './conditional-expression';
 import { JAssignmentExpressionVirtual } from './assignment-expression';
 import { JUpdateOpVirtual } from './update-op';
 import { JEqualsVirtual } from './equals';
+import { JPostfixExpressionVirtual } from './postfix-expression';
+import { JCallExpressionVirtual } from './call-expression';
+import { JInstantiationExpressionVirtual } from './instantiation-expression';
+import { JTypeArgListVirtual } from './type-arg-list';
 /** $ _import $ **/
 
 export type JAstVirtualType = JSingleExpressionVirtual
@@ -82,6 +86,10 @@ export type JAstVirtualType = JSingleExpressionVirtual
 | JAssignmentExpressionVirtual
 | JUpdateOpVirtual
 | JEqualsVirtual
+| JPostfixExpressionVirtual
+| JCallExpressionVirtual
+| JInstantiationExpressionVirtual
+| JTypeArgListVirtual
 /** $ type $ **/
 | JKeywordVirtual
 | JOperatorVirtual
