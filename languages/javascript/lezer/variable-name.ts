@@ -19,6 +19,7 @@ import {
 } from './utils';
 import { JYieldExpressionVirtual } from './yield-expression';
 import { JArgListVirtual } from './arg-list';
+import { JDynamicImportVirtual } from './dynamic-import';
 /** $ _import $ **/
 
 export interface JVariableName {
@@ -117,6 +118,10 @@ export function _JVariableName (
     }
     if (parentName === 'PostfixExpression') {
         const [_parent] = getContextWithJNodeMapping<JPostfixExpressionVirtual>(mapping, parentName);
+        _parent.value = child;
+    }
+    if (parentName === 'DynamicImport') {
+        const [_parent] = getContextWithJNodeMapping<JDynamicImportVirtual>(mapping, parentName);
         _parent.value = child;
     }
     callback();

@@ -11,7 +11,6 @@ import { JClassBodyVirtual } from './class-body';
 import { JReturnStatementVirtual } from './return-statement';
 import { JExportDeclarationVirtual } from './export-declaration';
 import { JMemberExpressionVirtual } from './member-expression';
-import { JClassExpressionVirtual } from './class-expression';
 import { JCallExpressionVirtual } from './call-expression';
 /** $ _import $ **/
 

@@ -11,6 +11,7 @@ import { JFunctionExpressionVirtual } from './function-expression';
 import { JExportDeclarationVirtual } from './export-declaration';
 import { JReturnStatementVirtual } from './return-statement';
 import { JMemberExpressionVirtual } from './member-expression';
+import { JDynamicImportVirtual } from './dynamic-import';
 /** $ _import $ **/
 
 export interface JKeyword {
@@ -41,6 +42,7 @@ export const JKeywords = [
     'export',
     'default',
     'return',
+    'import',
     /** $ kVar $ **/
     'this'
 ];
@@ -158,6 +160,10 @@ export function _JKeyword (
     if (parentName === 'ReturnStatement' && value === 'return') {
         const [_parent] = getContextWithJNodeMapping<JReturnStatementVirtual>(mapping, parentName);
         _parent._return = child;
+    }
+    if (parentName === 'DynamicImport' && value === 'import') {
+        const [_parent] = getContextWithJNodeMapping<JDynamicImportVirtual>(mapping, parentName);
+        _parent._import = child;
     }
     /** $ kFun $ **/
 

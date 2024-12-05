@@ -42,8 +42,7 @@ import { JUpdateOp } from './update-op';
 import { JEquals } from './equals';
 import { JPostfixExpression } from './postfix-expression';
 import { JCallExpression } from './call-expression';
-import { JInstantiationExpression } from './instantiation-expression';
-import { JTypeArgList } from './type-arg-list';
+import { JDynamicImport } from './dynamic-import';
 /** $ _import $ **/
 
 export type JAstType = JSingleExpression
@@ -88,8 +87,7 @@ export type JAstType = JSingleExpression
 | JEquals
 | JPostfixExpression
 | JCallExpression
-| JInstantiationExpression
-| JTypeArgList
+| JDynamicImport
 /** $ type $ **/
 | JKeyword
 | JOperator

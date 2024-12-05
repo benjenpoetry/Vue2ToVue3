@@ -53,6 +53,7 @@ import { _JUpdateOp } from './update-op';
 import { _JEquals } from './equals';
 import { _JPostfixExpression } from './postfix-expression';
 import { _JCallExpression } from './call-expression';
+import { _JDynamicImport } from './dynamic-import';
 /** $ _import $ **/
 
 export type JNodeMapping = Map<JAstTypeKey, JAstVirtualType[]>;
@@ -167,10 +168,8 @@ export function genJsVirtualNode (type: JAstTypeKey): JAstVirtualType {
         return { type: 'PostfixExpression' };
     case 'CallExpression':
         return { type: 'CallExpression' };
-    case 'InstantiationExpression':
-        return { type: 'InstantiationExpression' };
-    case 'TypeArgList':
-        return { type: 'TypeArgList' };
+    case 'DynamicImport':
+        return { type: 'DynamicImport' };
     /** $ genVirtualNode $ **/
     }
 }
@@ -480,6 +479,8 @@ export function genJsNode (
         return _JPostfixExpression(mapping, parentName);
     case 'CallExpression':
         return _JCallExpression(mapping, parentName);
+    case 'DynamicImport':
+        return _JDynamicImport(mapping, parentName);
     /** $ genAst $ **/
     }
     function callback () {

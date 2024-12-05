@@ -22,6 +22,7 @@ import { JConditionalExpression, JConditionalExpressionVirtual } from './conditi
 import { JAssignmentExpression, JAssignmentExpressionVirtual } from './assignment-expression';
 import { JPostfixExpression, JPostfixExpressionVirtual } from './postfix-expression';
 import { JCallExpression, JCallExpressionVirtual } from './call-expression';
+import { JDynamicImport, JDynamicImportVirtual } from './dynamic-import';
 /** $ _import $ **/
 
 export interface JSingleExpression {
@@ -54,6 +55,7 @@ export type JSingleExpressionValue = JNumber
 | JAssignmentExpression
 | JPostfixExpression
 | JCallExpression
+| JDynamicImport
 
 export type JSingleExpressionValueVirtual = JNumberVirtual
 | JStringVirtual
@@ -79,6 +81,7 @@ export type JSingleExpressionValueVirtual = JNumberVirtual
 | JAssignmentExpressionVirtual
 | JPostfixExpressionVirtual
 | JCallExpressionVirtual
+| JDynamicImportVirtual
 
 export interface JSingleExpressionVirtual {
     type: 'SingleExpression';

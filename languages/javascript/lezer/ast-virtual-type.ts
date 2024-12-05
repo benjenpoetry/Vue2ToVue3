@@ -42,8 +42,7 @@ import { JUpdateOpVirtual } from './update-op';
 import { JEqualsVirtual } from './equals';
 import { JPostfixExpressionVirtual } from './postfix-expression';
 import { JCallExpressionVirtual } from './call-expression';
-import { JInstantiationExpressionVirtual } from './instantiation-expression';
-import { JTypeArgListVirtual } from './type-arg-list';
+import { JDynamicImportVirtual } from './dynamic-import';
 /** $ _import $ **/
 
 export type JAstVirtualType = JSingleExpressionVirtual
@@ -88,8 +87,7 @@ export type JAstVirtualType = JSingleExpressionVirtual
 | JEqualsVirtual
 | JPostfixExpressionVirtual
 | JCallExpressionVirtual
-| JInstantiationExpressionVirtual
-| JTypeArgListVirtual
+| JDynamicImportVirtual
 /** $ type $ **/
 | JKeywordVirtual
 | JOperatorVirtual
