@@ -40,6 +40,7 @@ export * from './equals';
 export * from './postfix-expression';
 export * from './call-expression';
 export * from './dynamic-import';
+export * from './import-meta';
 /** $ _export $ **/
 export * from './utils';
 export * from './ast-type';

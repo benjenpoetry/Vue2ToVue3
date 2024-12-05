@@ -43,6 +43,7 @@ import { JEqualsVirtual } from './equals';
 import { JPostfixExpressionVirtual } from './postfix-expression';
 import { JCallExpressionVirtual } from './call-expression';
 import { JDynamicImportVirtual } from './dynamic-import';
+import { JImportMetaVirtual } from './import-meta';
 /** $ _import $ **/
 
 export type JAstVirtualType = JSingleExpressionVirtual
@@ -88,6 +89,7 @@ export type JAstVirtualType = JSingleExpressionVirtual
 | JPostfixExpressionVirtual
 | JCallExpressionVirtual
 | JDynamicImportVirtual
+| JImportMetaVirtual
 /** $ type $ **/
 | JKeywordVirtual
 | JOperatorVirtual

@@ -43,6 +43,7 @@ import { JEquals } from './equals';
 import { JPostfixExpression } from './postfix-expression';
 import { JCallExpression } from './call-expression';
 import { JDynamicImport } from './dynamic-import';
+import { JImportMeta } from './import-meta';
 /** $ _import $ **/
 
 export type JAstType = JSingleExpression
@@ -88,6 +89,7 @@ export type JAstType = JSingleExpression
 | JPostfixExpression
 | JCallExpression
 | JDynamicImport
+| JImportMeta
 /** $ type $ **/
 | JKeyword
 | JOperator

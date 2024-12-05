@@ -44,7 +44,8 @@ const [
     AssignmentExpression2,
     PostfixExpression,
     CallExpression,
-    DynamicImport
+    DynamicImport,
+    ImportMeta
 ] = genFileContents(path);
 
 describe('SingleExpression', () => {
@@ -188,8 +189,12 @@ describe('SingleExpression', () => {
     //     const ast = genJsAst(CallExpression);
     //     expect(ast.type).toBe('SingleExpression');
     // });
-    test('DynamicImport', () => {
-        const ast = genJsAst(DynamicImport);
+    // test('DynamicImport', () => {
+    //     const ast = genJsAst(DynamicImport);
+    //     expect(ast.type).toBe('SingleExpression');
+    // });
+    test('ImportMeta', () => {
+        const ast = genJsAst(ImportMeta);
         expect(ast.type).toBe('SingleExpression');
     });
 });

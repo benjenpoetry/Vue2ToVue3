@@ -23,6 +23,7 @@ import { JAssignmentExpression, JAssignmentExpressionVirtual } from './assignmen
 import { JPostfixExpression, JPostfixExpressionVirtual } from './postfix-expression';
 import { JCallExpression, JCallExpressionVirtual } from './call-expression';
 import { JDynamicImport, JDynamicImportVirtual } from './dynamic-import';
+import { JImportMeta, JImportMetaVirtual } from './import-meta';
 /** $ _import $ **/
 
 export interface JSingleExpression {
@@ -56,6 +57,7 @@ export type JSingleExpressionValue = JNumber
 | JPostfixExpression
 | JCallExpression
 | JDynamicImport
+| JImportMeta
 
 export type JSingleExpressionValueVirtual = JNumberVirtual
 | JStringVirtual
@@ -82,6 +84,7 @@ export type JSingleExpressionValueVirtual = JNumberVirtual
 | JPostfixExpressionVirtual
 | JCallExpressionVirtual
 | JDynamicImportVirtual
+| JImportMetaVirtual
 
 export interface JSingleExpressionVirtual {
     type: 'SingleExpression';

@@ -1,4 +1,4 @@
-import { JSingleExpressionValue, JSingleExpressionVirtual } from './single-expression';
+import { JSingleExpressionValue, JSingleExpressionValueVirtual, JSingleExpressionVirtual } from './single-expression';
 import {
     getContextWithJNodeMapping,
     JAstTypeKey,
