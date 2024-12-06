@@ -44,6 +44,8 @@ import { JPostfixExpression } from './postfix-expression';
 import { JCallExpression } from './call-expression';
 import { JDynamicImport } from './dynamic-import';
 import { JImportMeta } from './import-meta';
+import { JImportDeclaration } from './import-declaration';
+import { JImportGroup } from './import-group';
 /** $ _import $ **/
 
 export type JAstType = JSingleExpression
@@ -90,6 +92,8 @@ export type JAstType = JSingleExpression
 | JCallExpression
 | JDynamicImport
 | JImportMeta
+| JImportDeclaration
+| JImportGroup
 /** $ type $ **/
 | JKeyword
 | JOperator

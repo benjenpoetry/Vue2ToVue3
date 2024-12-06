@@ -1,4 +1,5 @@
 import { JArrayExpressionVirtual } from './array-expression';
+import { JImportDeclarationVirtual } from './import-declaration';
 import { JPropertyVirtual } from './property';
 import { JSingleExpressionVirtual } from './single-expression';
 import {
@@ -42,6 +43,11 @@ export function _JString (
     if (parentName === 'Property') {
         const [_parent] = getContextWithJNodeMapping<JPropertyVirtual>(mapping, parentName);
         _parent.value.expression = child;
+    }
+
+    if (parentName === 'String') {
+        const [_parent] = getContextWithJNodeMapping<JImportDeclarationVirtual>(mapping, parentName);
+        _parent.source = child;
     }
 
     children.splice(index, 1);

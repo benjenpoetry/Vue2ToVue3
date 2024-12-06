@@ -12,6 +12,7 @@ import { JReturnStatementVirtual } from './return-statement';
 import { JExportDeclarationVirtual } from './export-declaration';
 import { JMemberExpressionVirtual } from './member-expression';
 import { JCallExpressionVirtual } from './call-expression';
+import { JImportGroupVirtual } from './import-group';
 /** $ _import $ **/
 
 export interface JOperator {
@@ -157,6 +158,14 @@ export function _JOperator (
     if (parentName === 'CallExpression' && value === '?.') {
         const [_parent] = getContextWithJNodeMapping<JCallExpressionVirtual>(mapping, parentName);
         _parent.questionDot = child;
+    }
+    if (parentName === 'ImportGroup' && value === '{') {
+        const [_parent] = getContextWithJNodeMapping<JImportGroupVirtual>(mapping, parentName);
+        _parent.start = child;
+    }
+    if (parentName === 'ImportGroup' && value === '}') {
+        const [_parent] = getContextWithJNodeMapping<JImportGroupVirtual>(mapping, parentName);
+        _parent.end = child;
     }
     /** $ kFun $ **/
 

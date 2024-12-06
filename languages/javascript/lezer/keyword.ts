@@ -13,6 +13,7 @@ import { JReturnStatementVirtual } from './return-statement';
 import { JMemberExpressionVirtual } from './member-expression';
 import { JDynamicImportVirtual } from './dynamic-import';
 import { JImportMetaVirtual } from './import-meta';
+import { JImportDeclarationVirtual } from './import-declaration';
 /** $ _import $ **/
 
 export interface JKeyword {
@@ -44,6 +45,7 @@ export const JKeywords = [
     'default',
     'return',
     'import',
+    'from',
     /** $ kVar $ **/
     'this'
 ];
@@ -169,6 +171,14 @@ export function _JKeyword (
     if (parentName === 'ImportMeta' && value === 'import') {
         const [_parent] = getContextWithJNodeMapping<JImportMetaVirtual>(mapping, parentName);
         _parent._import = child;
+    }
+    if (parentName === 'ImportDeclaration' && value === 'import') {
+        const [_parent] = getContextWithJNodeMapping<JImportDeclarationVirtual>(mapping, parentName);
+        _parent._import = child;
+    }
+    if (parentName === 'ImportDeclaration' && value === 'from') {
+        const [_parent] = getContextWithJNodeMapping<JImportDeclarationVirtual>(mapping, parentName);
+        _parent._from = child;
     }
     /** $ kFun $ **/
 

@@ -1,8 +1,5 @@
-export default {
-    name: 'App',
-    data () {
-        return {
-            name: 'App'
-        };
-    }
-};
+export default {}
+----------------------------
+import { a } from 'A';
+----------------------------
+this.count ++

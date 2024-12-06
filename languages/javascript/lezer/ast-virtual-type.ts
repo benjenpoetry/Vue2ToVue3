@@ -44,6 +44,8 @@ import { JPostfixExpressionVirtual } from './postfix-expression';
 import { JCallExpressionVirtual } from './call-expression';
 import { JDynamicImportVirtual } from './dynamic-import';
 import { JImportMetaVirtual } from './import-meta';
+import { JImportDeclarationVirtual } from './import-declaration';
+import { JImportGroupVirtual } from './import-group';
 /** $ _import $ **/
 
 export type JAstVirtualType = JSingleExpressionVirtual
@@ -90,6 +92,8 @@ export type JAstVirtualType = JSingleExpressionVirtual
 | JCallExpressionVirtual
 | JDynamicImportVirtual
 | JImportMetaVirtual
+| JImportDeclarationVirtual
+| JImportGroupVirtual
 /** $ type $ **/
 | JKeywordVirtual
 | JOperatorVirtual
