@@ -1,4 +1,5 @@
 import { JBinaryExpressionVirtual } from './binary-expression';
+import { JPostfixExpressionVirtual } from './postfix-expression';
 import {
     getContextWithJNodeMapping,
     JAstTypeKey,
@@ -29,6 +30,10 @@ export function _JArithOp (
     if (parentName === 'BinaryExpression') {
         const [_parent] = getContextWithJNodeMapping<JBinaryExpressionVirtual>(mapping, parentName);
         _parent.arithOp = child;
+    }
+    if (parentName === 'PostfixExpression') {
+        const [_parent] = getContextWithJNodeMapping<JPostfixExpressionVirtual>(mapping, parentName);
+        _parent.op = child;
     }
     children.splice(index, 1);
     callback();

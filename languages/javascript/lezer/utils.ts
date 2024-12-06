@@ -57,6 +57,7 @@ import { _JDynamicImport } from './dynamic-import';
 import { _JImportMeta } from './import-meta';
 import { _JImportDeclaration } from './import-declaration';
 import { _JImportGroup } from './import-group';
+import { _JExpressionStatement } from './expression-statement';
 /** $ _import $ **/
 
 export type JNodeMapping = Map<JAstTypeKey, JAstVirtualType[]>;
@@ -179,6 +180,8 @@ export function genJsVirtualNode (type: JAstTypeKey): JAstVirtualType {
         return { type: 'ImportDeclaration' };
     case 'ImportGroup':
         return { type: 'ImportGroup', values: [] };
+    case 'ExpressionStatement':
+        return { type: 'ExpressionStatement' };
     /** $ genVirtualNode $ **/
     }
 }
@@ -496,6 +499,8 @@ export function genJsNode (
         return _JImportDeclaration(mapping, parentName);
     case 'ImportGroup':
         return _JImportGroup(mapping, parentName);
+    case 'ExpressionStatement':
+        return _JExpressionStatement(mapping, parentName);
     /** $ genAst $ **/
     }
     function callback () {

@@ -1,5 +1,6 @@
 import { JAssignmentExpressionVirtual } from './assignment-expression';
 import { JOperator, JOperatorVirtual } from './operator';
+import { JPostfixExpressionVirtual } from './postfix-expression';
 import { JPropertyName, JPropertyNameVirtual } from './property-name';
 import { JSingleExpressionValue, JSingleExpressionValueVirtual, JSingleExpressionVirtual } from './single-expression';
 import {
@@ -37,6 +38,10 @@ export function _JMemberExpression (
     if (parentName === 'AssignmentExpression') {
         const [_parent] = getContextWithJNodeMapping<JAssignmentExpressionVirtual>(mapping, parentName);
         _parent.left = child;
+    }
+    if (parentName === 'PostfixExpression') {
+        const [_parent] = getContextWithJNodeMapping<JPostfixExpressionVirtual>(mapping, parentName);
+        _parent.value = child;
     }
     children.splice(index, 1);
 }

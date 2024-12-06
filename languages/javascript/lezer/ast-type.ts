@@ -46,6 +46,7 @@ import { JDynamicImport } from './dynamic-import';
 import { JImportMeta } from './import-meta';
 import { JImportDeclaration } from './import-declaration';
 import { JImportGroup } from './import-group';
+import { JExpressionStatement } from './expression-statement';
 /** $ _import $ **/
 
 export type JAstType = JSingleExpression
@@ -94,6 +95,7 @@ export type JAstType = JSingleExpression
 | JImportMeta
 | JImportDeclaration
 | JImportGroup
+| JExpressionStatement
 /** $ type $ **/
 | JKeyword
 | JOperator

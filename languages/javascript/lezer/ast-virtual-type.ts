@@ -46,6 +46,7 @@ import { JDynamicImportVirtual } from './dynamic-import';
 import { JImportMetaVirtual } from './import-meta';
 import { JImportDeclarationVirtual } from './import-declaration';
 import { JImportGroupVirtual } from './import-group';
+import { JExpressionStatementVirtual } from './expression-statement';
 /** $ _import $ **/
 
 export type JAstVirtualType = JSingleExpressionVirtual
@@ -94,6 +95,7 @@ export type JAstVirtualType = JSingleExpressionVirtual
 | JImportMetaVirtual
 | JImportDeclarationVirtual
 | JImportGroupVirtual
+| JExpressionStatementVirtual
 /** $ type $ **/
 | JKeywordVirtual
 | JOperatorVirtual

@@ -11,7 +11,7 @@ const path = resolve(__dirname, 'script.t');
 const [
     ExportDeclaration,
     ImportDeclaration,
-    S
+    MemberExpression
 ] = genFileContents(path);
 describe('Script', () => {
     // test('ExportDeclaration', () => {
@@ -22,8 +22,8 @@ describe('Script', () => {
     //     const ast = genJsAst(ImportDeclaration, 'Script');
     //     expect(ast.type).toBe('Script');
     // });
-    test('S', () => {
-        const ast = genJsAst(S, 'Script');
+    test('MemberExpression', () => {
+        const ast = genJsAst(MemberExpression, 'Script');
         expect(ast.type).toBe('Script');
     });
 });

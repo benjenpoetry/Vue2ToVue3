@@ -43,6 +43,7 @@ export * from './dynamic-import';
 export * from './import-meta';
 export * from './import-declaration';
 export * from './import-group';
+export * from './expression-statement';
 /** $ _export $ **/
 export * from './utils';
 export * from './ast-type';

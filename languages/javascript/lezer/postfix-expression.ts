@@ -1,3 +1,5 @@
+import { JArithOp, JArithOpVirtual } from './arith-op';
+import { JExpressionStatementVirtual } from './expression-statement';
 import { JLogicOp, JLogicOpVirtual } from './logic-op';
 import { JSingleExpressionValue, JSingleExpressionValueVirtual, JSingleExpressionVirtual } from './single-expression';
 import {
@@ -10,14 +12,14 @@ import {
 export interface JPostfixExpression {
     type: 'PostfixExpression';
     value: JSingleExpressionValue;
-    logicOp: JLogicOp
+    op: JLogicOp | JArithOp;
     /** $ childType $ **/
 }
 
 export interface JPostfixExpressionVirtual {
     type: 'PostfixExpression';
-    value?: JSingleExpressionValueVirtual;
-    logicOp?: JLogicOpVirtual;
+    value?: JSingleExpressionValueVirtual
+    op?: JLogicOpVirtual | JArithOpVirtual
     /** $ childVirtualType $ **/
 }
 
@@ -30,6 +32,10 @@ export function _JPostfixExpression (
 
     if (parentName === 'SingleExpression') {
         const [_parent] = getContextWithJNodeMapping<JSingleExpressionVirtual>(mapping, parentName);
+        _parent.value = child;
+    }
+    if (parentName === 'ExpressionStatement') {
+        const [_parent] = getContextWithJNodeMapping<JExpressionStatementVirtual>(mapping, parentName);
         _parent.value = child;
     }
 }

@@ -52,7 +52,7 @@ export function _JLogicOp (
 
     if (parentName === 'PostfixExpression') {
         const [_parent] = getContextWithJNodeMapping<JPostfixExpressionVirtual>(mapping, parentName);
-        _parent.logicOp = child;
+        _parent.op = child;
     }
 
     callback();
